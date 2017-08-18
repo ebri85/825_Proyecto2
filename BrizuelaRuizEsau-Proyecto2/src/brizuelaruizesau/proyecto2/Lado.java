@@ -26,8 +26,38 @@ public void InsertarNodo(Nodo n)
           this.nodo = n;
       } else 
       {
-          
-          if(str2.compareTo(str1)<0)
+            if(str2.compareTo(str1)<0)
+          {
+              if(izq ==null)
+              {
+                  izq = new Lado();
+                  izq.InsertarNodo(n);
+                } else
+                {
+                   if(str2.compareTo(str1)>0)
+                   {
+                       if(der == null)
+                       {
+                           der = new Lado();
+                           der.InsertarNodo(n);
+                       }
+                   }
+                }
+          }
+      }
+    }
+
+public void PreOrden(Nodo n)   
+    {
+      String str1= nodo.toString();
+      String hilera= null;
+      String str2 = n.toString();
+      if(nodo==null)
+      {
+          this.nodo = n;
+      } else 
+      {
+            if(str2.compareTo(str1)<0)
           {
               if(izq ==null)
               {
@@ -48,3 +78,8 @@ public void InsertarNodo(Nodo n)
       }
     }
   }
+
+
+  }
+
+
