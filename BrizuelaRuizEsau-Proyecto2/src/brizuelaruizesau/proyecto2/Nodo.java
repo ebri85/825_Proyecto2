@@ -11,17 +11,19 @@ package brizuelaruizesau.proyecto2;
  */
 public class Nodo 
 {
-   
-    private Object valor;
-
-    public Nodo()
-      {
-        this.valor = null;
-      }
     
+    Object valor;
+    public Nodo hDer,hIzq;
+    
+    
+
+
     public Nodo(Object valor)
       {
+
         this.valor = valor;
+        this.hDer= null;
+        this.hIzq = null;
       }
 
     @Override
@@ -30,8 +32,7 @@ public class Nodo
         return (String) valor;
       }
     
-    
-    
+
   
 }
 
