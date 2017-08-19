@@ -72,14 +72,14 @@ public class Arbol
    
    public void RecorreInOrden(Nodo nodo)
      {
-       String hilera= null;
+       String hilera="";
        if(nodo!=null)
        {
            RecorreInOrden(nodo.hIzq);
-           hilera = hilera + ", ["+nodo.toString()+']';
+           System.out.println("["+nodo.toString()+']');
            RecorreInOrden(nodo.hDer);           
        }
-       JOptionPane.showMessageDialog(null, hilera,"Recorrido InOrden",JOptionPane.OK_OPTION);
+    
      }
    
    public void RecorrePreOrden(Nodo nodo)
@@ -87,24 +87,25 @@ public class Arbol
        String hilera = null;
        if(nodo!=null)
        {
-            hilera = hilera + ", ["+nodo.toString()+']';
+            System.out.println("["+nodo.toString()+']');
+            
             RecorrePreOrden(nodo.hIzq);
             RecorrePreOrden(nodo.hDer);
        }
-       JOptionPane.showMessageDialog(null, hilera,"Recorrido InOrden",JOptionPane.OK_OPTION);
+       
      }
     
    
-     public void RecorrePosOrden(Nodo nodo)
+     public void RecorrePostOrden(Nodo nodo)
      {
        String hilera = null;
        if(nodo!=null)
        {
-            RecorrePosOrden(nodo.hIzq);
-            RecorrePosOrden(nodo.hDer);
-            hilera = hilera + ", ["+nodo.toString()+']';
+            RecorrePostOrden(nodo.hIzq);
+            RecorrePostOrden(nodo.hDer);
+            System.out.println("["+nodo.toString()+']');
        }
-       JOptionPane.showMessageDialog(null, hilera,"Recorrido InOrden",JOptionPane.OK_OPTION);
+       
      }
  
   }

@@ -19,7 +19,7 @@ public class main {
     public static void main(String[] args) {
    
         int opcion=0;
-        int cantidad =0, cont =1;
+        int cantidad =0, cont =0;
         String elemento;
         String nombre;
         Arbol arbol = new Arbol();
@@ -36,7 +36,7 @@ public class main {
                    case 1:
                        //case para indicar la cantidad de nodos que va a tener el Arbol Binario
                       cantidad = Integer.parseInt(JOptionPane.showInputDialog(null,"Cuantos Nodos desea que tenga el siguiente Arbol?","Solicitude de Tamaño del Arbol"
-                                                                             ,JOptionPane.QUESTION_MESSAGE));
+                                                                             ,JOptionPane.DEFAULT_OPTION));
                        break;
                        
                    case 2: 
@@ -53,6 +53,14 @@ public class main {
                    
                    case 3:
                        //Mostrar los datos del árbol en recorrido PreOrden.
+                       if(!arbol.vacio())
+                       {
+                         arbol.RecorrePreOrden(arbol.raiz);   
+                           
+                       } else 
+                       {
+                           JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                       }                
                        
                        break;
                               
@@ -60,13 +68,30 @@ public class main {
                    case 4:
                        
                        //Mostrar los datos del árbol en recorrido InOrden.
+                        if(!arbol.vacio())
+                       {
+                            arbol.RecorreInOrden(arbol.raiz);
+                           
+                       } else 
+                       {
+                           JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                       }    
+                       
                              
                        break;
                        
                    case 5:
                        
                        //Mostrar los datos del árbol en recorrido PostOrden.
-                                
+                       if(!arbol.vacio())
+                       {
+                            arbol.RecorrePostOrden(arbol.raiz);
+                           
+                       } else 
+                       {
+                           JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
+                       }       
+                       
                        break;
                                 
                    default:
@@ -96,17 +121,16 @@ public class main {
        
         menu+= "1 - Indique la Cantidad de Nodos que va a Manejar el Arbol\n";
         menu+= "2 - Agregue los Objetos del Arbol\n";
-        menu+= "3 - Muestre los Recorridos y Arbol Original\n";
-        menu+= "4 - Grafico del Arbol\n";
+        menu+= "3 - Mostrar los datos del árbol en recorrido PreOrden\n";
+        menu+= "4 - Mostrar los datos del árbol en recorrido InOrden\n";
+        menu+= "5 - Mostrar los datos del árbol en recorrido PostOrden\n";        
         menu+= "0 - SALIR\n\n";
 
     op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu));
     return op;
 }
     
-    
-    
-    
+       
 }
 
 
