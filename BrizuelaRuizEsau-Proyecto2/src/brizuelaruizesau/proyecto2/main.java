@@ -6,7 +6,6 @@
 package brizuelaruizesau.proyecto2;
 
 import javax.swing.JOptionPane;
-import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
@@ -30,22 +29,18 @@ public class main {
           {
             try 
               {
-               opcion = Integer.parseInt( JOptionPane.showInputDialog(null,
-                       "1. Digite la Cantidad de Nodos que va a Tener el Arbol\n"
-                        + "2. Agrege los Objetos al Nodo\n"
-                        +  "3. Muestra el Arbol con sus Elementos"
-               
-                        + "0. Salir\n"
-                        + "Elige una Opcion...", "Arboles Binarios",JOptionPane.QUESTION_MESSAGE));
+               opcion = menu();
                
                switch(opcion)
                  {
                    case 1:
-                      cantidad = Integer.parseInt(JOptionPane.showInputDialog(null," Cuantos Nodos desea que tenga el siguiente Arbol?","Solicitude de Tamaño del Arbol"
-                                                                                            ,JOptionPane.QUESTION_MESSAGE));
+                       //case para indicar la cantidad de nodos que va a tener el Arbol Binario
+                      cantidad = Integer.parseInt(JOptionPane.showInputDialog(null,"Cuantos Nodos desea que tenga el siguiente Arbol?","Solicitude de Tamaño del Arbol"
+                                                                             ,JOptionPane.QUESTION_MESSAGE));
                        break;
                        
                    case 2: 
+                       //Case para el ingreso de los objectos al Arbol
                             do{
                              elemento = JOptionPane.showInputDialog(null, "Ingrese El Objecto que desee al Arbol", "Agregando el nodo",JOptionPane.QUESTION_MESSAGE);
                        
@@ -57,17 +52,22 @@ public class main {
                    break;
                    
                    case 3:
+                       //Mostrar los datos del árbol en recorrido PreOrden.
                        
                        break;
                               
                                
                    case 4:
+                       
+                       //Mostrar los datos del árbol en recorrido InOrden.
                              
                        break;
                        
-                   case 0:
+                   case 5:
+                       
+                       //Mostrar los datos del árbol en recorrido PostOrden.
                                 
-                                System.exit(0);
+                       break;
                                 
                    default:
                        
@@ -89,10 +89,10 @@ public class main {
     
     public static int menu()
 {
-    int op=0;
-    String menu="";
+    int op;
+    String menu;
 
-        menu = "Menu de Manejo de Arbol Binario";
+        menu = "Menu de Manejo de Arbol Binario\n";
        
         menu+= "1 - Indique la Cantidad de Nodos que va a Manejar el Arbol\n";
         menu+= "2 - Agregue los Objetos del Arbol\n";
@@ -100,7 +100,7 @@ public class main {
         menu+= "4 - Grafico del Arbol\n";
         menu+= "0 - SALIR\n\n";
 
-     JOptionPane.showInputDialog(null,menu);
+    op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu));
     return op;
 }
     
