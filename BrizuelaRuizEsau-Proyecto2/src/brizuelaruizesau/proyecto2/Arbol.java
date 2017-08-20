@@ -6,6 +6,7 @@
 package brizuelaruizesau.proyecto2;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -107,5 +108,11 @@ public class Arbol
        }
        
      }
- 
+     
+     public JPanel ObtieneDibujo()
+       {
+         return new DibujoArbol(this);
+       }
+     
+     
   }

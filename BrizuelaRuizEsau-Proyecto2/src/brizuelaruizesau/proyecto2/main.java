@@ -55,7 +55,8 @@ public class main {
                        //Mostrar los datos del árbol en recorrido PreOrden.
                        if(!arbol.vacio())
                        {
-                         arbol.RecorrePreOrden(arbol.raiz);   
+                         arbol.RecorrePreOrden(arbol.raiz); 
+                         
                            
                        } else 
                        {
@@ -72,6 +73,7 @@ public class main {
                        {
                             arbol.RecorreInOrden(arbol.raiz);
                            
+                           
                        } else 
                        {
                            JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
@@ -87,12 +89,15 @@ public class main {
                        {
                             arbol.RecorrePostOrden(arbol.raiz);
                            
+                           
                        } else 
                        {
                            JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
                        }       
                        
                        break;
+                   case 6:
+                       arbol.ObtieneDibujo();
                                 
                    default:
                        
@@ -123,7 +128,8 @@ public class main {
         menu+= "2 - Agregue los Objetos del Arbol\n";
         menu+= "3 - Mostrar los datos del árbol en recorrido PreOrden\n";
         menu+= "4 - Mostrar los datos del árbol en recorrido InOrden\n";
-        menu+= "5 - Mostrar los datos del árbol en recorrido PostOrden\n";        
+        menu+= "5 - Mostrar los datos del árbol en recorrido PostOrden\n"; 
+        menu+= "6 - Mostrar El Arbol\n";
         menu+= "0 - SALIR\n\n";
 
     op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu));

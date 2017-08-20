@@ -15,9 +15,6 @@ public class Nodo
     Object valor;
     public Nodo hDer,hIzq;
     
-    
-
-
     public Nodo(Object valor)
       {
 
