@@ -19,8 +19,8 @@ public class Nodo
       {
 
         this.valor = valor;
-        this.hDer= null;
-        this.hIzq = null;
+        this.hDer= null;//puntero hacia el hijo derecho
+        this.hIzq = null;//puntero hacia el hijo Izquierdo
       }
 
     @Override

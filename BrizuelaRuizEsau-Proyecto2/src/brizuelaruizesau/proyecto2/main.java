@@ -134,6 +134,7 @@ public class main {
     }
     
     public static int menu()
+            //metodo que imprime el menu
 {
     int op;
     String menu;

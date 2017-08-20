@@ -6,9 +6,6 @@
 package brizuelaruizesau.proyecto2;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import sun.security.util.Length;
 
 /**
  *
@@ -44,7 +41,8 @@ public class Arbol
                              {
                                padre = auxiliar;
 
-                               if(obj.hashCode()< auxiliar.valor.hashCode())
+                               if(obj.hashCode()< auxiliar.valor.hashCode())//esto compara el tamano del objecto, 
+                                                                            //retorna el tamano segun el tipo de dato
                                  {
                                    auxiliar = auxiliar.hIzq;
                                    if(auxiliar==null)
@@ -75,8 +73,9 @@ public class Arbol
      }
    
    public void RecorreInOrden(Nodo nodo)
+           //metodo recursivo para el InOrden
      {
-       String hilera="";
+      
        if(nodo!=null)
        {
            RecorreInOrden(nodo.hIzq);
@@ -87,8 +86,9 @@ public class Arbol
      }
    
    public void RecorrePreOrden(Nodo nodo)
+           //metodo recursivo para el PreOrden
      {
-       String hilera = null;
+       
        if(nodo!=null)
        {
             System.out.println("["+nodo.toString()+']');
@@ -101,8 +101,9 @@ public class Arbol
     
    
      public void RecorrePostOrden(Nodo nodo)
+             //metodo recursivo para el PostOrden
      {
-       String hilera = null;
+       
        if(nodo!=null)
        {
             RecorrePostOrden(nodo.hIzq);
@@ -113,6 +114,7 @@ public class Arbol
      }
           
      public void ObtieneDibujo()
+             //en este metodo se crea un contendor y se llama al dibujo del arbol binario
        {
            JFrame marco = new JFrame("Arbol Binario");
            DibujoArbol dibArbol = new DibujoArbol(this);

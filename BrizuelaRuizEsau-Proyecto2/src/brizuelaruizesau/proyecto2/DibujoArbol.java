@@ -12,6 +12,8 @@ import javax.swing.*;
 /**
  *
  * @author esau_br
+ * Esta Clase se baso en el ejemplo que subio el tutor al moodle, solo
+ * se realizaron cambios
  */
 public class DibujoArbol extends JPanel
   {
