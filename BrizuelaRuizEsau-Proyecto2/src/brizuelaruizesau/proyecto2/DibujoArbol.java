@@ -84,11 +84,11 @@ public class DibujoArbol extends JPanel
         int centro = 0;
         
         if(der != Integer.MAX_VALUE )
-            centro = der = ladoDer.width - hijoAhijo/2;
+            centro = der - ladoDer.width - hijoAhijo/2;
         else if(izq != Integer.MAX_VALUE)
             centro = izq + ladoIzq.width + hijoAhijo/2;
         
-        int ancho = fm.stringWidth(nodo.toString()+"");
+        int ancho = fm.stringWidth(nodo.toString());
         
         posNodos.put(nodo, new Rectangle(centro - ancho/2 - 3,top,ancho+6,fm.getHeight()));
         
@@ -104,7 +104,7 @@ public class DibujoArbol extends JPanel
         Rectangle r = (Rectangle) posNodos.get(nodo);
         g.draw(r);
         g.drawString(nodo.toString()+"",r.x+3,r.y+yoffs);
-        
+            
         if(puntoX != Integer.MAX_VALUE)
             
         g.drawLine(puntoX,puntoY,(int)(r.x+r.width/2),r.y);

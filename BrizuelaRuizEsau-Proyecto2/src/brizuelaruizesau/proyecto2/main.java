@@ -5,7 +5,7 @@
  */
 package brizuelaruizesau.proyecto2;
 
-import javax.swing.JFrame;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +31,8 @@ public class main {
             try 
               {
                opcion = menu();
+               System.out.flush();
+               
                
                switch(opcion)
                  {
@@ -45,7 +47,7 @@ public class main {
                        try
                        {
                          do{
-                             elemento = JOptionPane.showInputDialog(null, "Ingrese El Objecto que desee al Arbol", "Agregando el nodo",JOptionPane.QUESTION_MESSAGE);
+                            elemento = JOptionPane.showInputDialog(null, "Ingrese El Objecto que desee al Arbol", "Agregando el nodo",JOptionPane.QUESTION_MESSAGE);
                        
                             arbol.InsertarNodo((Object)elemento);
                             cont++;
@@ -64,8 +66,9 @@ public class main {
                        //Mostrar los datos del árbol en recorrido PreOrden.
                        if(!arbol.vacio())
                        {
+                         System.out.println("Recorrido PostOrden");  
                          arbol.RecorrePreOrden(arbol.raiz); 
-                         
+                         System.out.flush();
                            
                        } else 
                        {
@@ -80,15 +83,17 @@ public class main {
                        //Mostrar los datos del árbol en recorrido InOrden.
                         if(!arbol.vacio())
                        {
+                           System.out.println("Recorrido InOrden");
                             arbol.RecorreInOrden(arbol.raiz);
+                            System.out.flush();
                            
                            
                        } else 
                        {
                            JOptionPane.showMessageDialog(null,"El Arbol se encuentra Vacio","ERROR",JOptionPane.INFORMATION_MESSAGE);
                        }    
-                       
-                             
+                     
+                      
                        break;
                        
                    case 5:
@@ -96,7 +101,9 @@ public class main {
                        //Mostrar los datos del árbol en recorrido PostOrden.
                        if(!arbol.vacio())
                        {
+                           System.out.println("Recorrido PostOrden");
                             arbol.RecorrePostOrden(arbol.raiz);
+                            System.out.flush();
                            
                            
                        } else 
@@ -108,6 +115,8 @@ public class main {
   
                    default:
                        
+                       
+                       
                        System.exit(0);
                        
                        
@@ -117,7 +126,7 @@ public class main {
                   JOptionPane.showMessageDialog(null,"Error" + n.getMessage() );
                 }
             
-            
+                        
           } while(opcion!=0);
         
         

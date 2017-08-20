@@ -8,6 +8,7 @@ package brizuelaruizesau.proyecto2;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import sun.security.util.Length;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Arbol
         Nodo nuevo = new Nodo(obj);
         String str1=obj.toString();
         String str2;
-            
+ 
            if(raiz==null)
              {
                raiz = nuevo;
@@ -38,12 +39,12 @@ public class Arbol
                 {
                    Nodo auxiliar = raiz;
                    Nodo padre ;
-                   str2= auxiliar.toString();
+                   str2= auxiliar.toString();          
                            while(true)
                              {
                                padre = auxiliar;
-                                
-                               if(str1.compareTo(str2)<0)
+
+                               if(obj.hashCode()< auxiliar.valor.hashCode())
                                  {
                                    auxiliar = auxiliar.hIzq;
                                    if(auxiliar==null)

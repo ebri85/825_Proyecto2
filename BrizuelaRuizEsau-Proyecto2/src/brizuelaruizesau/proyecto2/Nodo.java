@@ -15,7 +15,7 @@ public class Nodo
     Object valor;
     public Nodo hDer,hIzq;
     
-    public Nodo(Object valor)
+    public Nodo(Object valor)//constructor
       {
 
         this.valor = valor;
@@ -26,7 +26,7 @@ public class Nodo
     @Override
     public String toString()
       {
-        return (String)valor;
+        return (String)valor;//retorna un string del Objecto que se digito
       }
     
 
