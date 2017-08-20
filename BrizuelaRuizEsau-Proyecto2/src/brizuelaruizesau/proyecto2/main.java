@@ -66,7 +66,7 @@ public class main {
                        //Mostrar los datos del árbol en recorrido PreOrden.
                        if(!arbol.vacio())
                        {
-                         System.out.println("Recorrido PostOrden");  
+                         System.out.println("Recorrido PreOrden");  
                          arbol.RecorrePreOrden(arbol.raiz); 
                          System.out.flush();
                            
@@ -115,7 +115,7 @@ public class main {
   
                    default:
                        
-                       
+                        JOptionPane.showMessageDialog(null,"Cerrando la Aplicacion","Cerrando...",JOptionPane.INFORMATION_MESSAGE);
                        
                        System.exit(0);
                        
@@ -148,7 +148,7 @@ public class main {
         menu+= "5 - Mostrar los datos del árbol en recorrido PostOrden\n"; 
         menu+= "0 - SALIR\n\n";
 
-    op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu));
+    op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu,"MENU",JOptionPane.OK_OPTION));
     return op;
 }
     

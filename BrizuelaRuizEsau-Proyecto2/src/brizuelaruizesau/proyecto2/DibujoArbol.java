@@ -30,7 +30,7 @@ public class DibujoArbol extends JPanel
       {
         this.arbDib = arbDib;
         this.setBackground(Color.DARK_GRAY);
-        this.setForeground(Color.BLUE);
+        this.setForeground(Color.YELLOW);
         posNodos = new HashMap();
         subArbTam = new HashMap();
         dirty = true;
