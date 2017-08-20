@@ -5,6 +5,7 @@
  */
 package brizuelaruizesau.proyecto2;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -16,6 +17,7 @@ public class Arbol
         
   {
     Nodo raiz;
+  
     
     public Arbol()
       {
@@ -108,11 +110,17 @@ public class Arbol
        }
        
      }
-     
-     public JPanel ObtieneDibujo()
+          
+     public void ObtieneDibujo()
        {
-         return new DibujoArbol(this);
+           JFrame marco = new JFrame("Arbol Binario");
+           DibujoArbol dibArbol = new DibujoArbol(this);
+           marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           
+           marco.add(dibArbol);
+           marco.setSize(400, 400);
+           marco.setVisible(true);
+           
        }
-     
-     
+ 
   }

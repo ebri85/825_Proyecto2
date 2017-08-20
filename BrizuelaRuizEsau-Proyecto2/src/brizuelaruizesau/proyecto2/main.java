@@ -5,6 +5,7 @@
  */
 package brizuelaruizesau.proyecto2;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,14 +42,22 @@ public class main {
                        
                    case 2: 
                        //Case para el ingreso de los objectos al Arbol
-                            do{
+                       try
+                       {
+                         do{
                              elemento = JOptionPane.showInputDialog(null, "Ingrese El Objecto que desee al Arbol", "Agregando el nodo",JOptionPane.QUESTION_MESSAGE);
                        
                             arbol.InsertarNodo((Object)elemento);
                             cont++;
                            
                            }while(cont!=cantidad);
+                         arbol.ObtieneDibujo();
                     
+                       }catch(Exception e)
+                       {
+                           JOptionPane.showMessageDialog(null,"Error " + e.getMessage(),"ERROR",JOptionPane.ERROR_MESSAGE);
+                       }
+                      
                    break;
                    
                    case 3:
@@ -96,9 +105,7 @@ public class main {
                        }       
                        
                        break;
-                   case 6:
-                       arbol.ObtieneDibujo();
-                                
+  
                    default:
                        
                        System.exit(0);
@@ -129,7 +136,6 @@ public class main {
         menu+= "3 - Mostrar los datos del árbol en recorrido PreOrden\n";
         menu+= "4 - Mostrar los datos del árbol en recorrido InOrden\n";
         menu+= "5 - Mostrar los datos del árbol en recorrido PostOrden\n"; 
-        menu+= "6 - Mostrar El Arbol\n";
         menu+= "0 - SALIR\n\n";
 
     op =  Integer.parseInt(JOptionPane.showInputDialog(null,menu));
